@@ -12,6 +12,13 @@ resource "aws_security_group" "openstack" {
   description = "Allow all inbound/outbound traffic"
 
   ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["54.85.39.2/32"]
+  }
+
+  ingress {
     from_port   = 0
     to_port     = 0
     protocol    = "tcp"
@@ -35,7 +42,7 @@ resource "aws_security_group" "openstack" {
 }
 
 resource "aws_spot_instance_request" "openstack" {
-  ami = "ami-0b69ea66ff7391e80"
+  ami = "ami-d5bf2caa"
   spot_price = "0.07"
   instance_type = "m3.xlarge"
   availability_zone = "us-east-1a"
