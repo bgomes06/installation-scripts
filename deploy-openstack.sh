@@ -1,16 +1,16 @@
 #!/bin/bash
 
-systemctl disable firewalld
-systemctl stop firewalld
-systemctl disable NetworkManager
-systemctl stop NetworkManager
-systemctl enable network
-systemctl start network
+sudo systemctl disable firewalld
+sudo systemctl stop firewalld
+sudo systemctl disable NetworkManager
+sudo systemctl stop NetworkManager
+sudo systemctl enable network
+sudo systemctl start network
 
-yum install -y https://repos.fedorapeople.org/repos/openstack/openstack-ocata/rdo-release-ocata-3.noarch.rpm
-yum install -y centos-release-openstack-ocata
-yum-config-manager --enable openstack-ocata
-yum update -y
-yum install -y openstack-packstack
-packstack --allinone
+sudo yum --nogpgcheck localinstall -y https://repos.fedorapeople.org/repos/openstack/openstack-stein/rdo-release-stein-3.noarch.rpm
+sudo yum install -y centos-release-openstack-stein
+sudo yum-config-manager --enable openstack-stein
+sudo yum update -y
+sudo yum install -y openstack-packstack
+sudo packstack --allinone
 
