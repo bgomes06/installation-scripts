@@ -13,7 +13,7 @@ echo "Required packages installation done."
 sleep 3
 
 echo "Download Terraform packages, unzip and move it to bin directory"
-export TER_VER="0.12.9"
+export TER_VER="0.12.12"
 wget https://releases.hashicorp.com/terraform/${TER_VER}/terraform_${TER_VER}_linux_amd64.zip -O /tmp/terraform_${TER_VER}_linux_amd64.zip > /dev/null 2>&1
 unzip /tmp/terraform_${TER_VER}_linux_amd64.zip -d /tmp/ > /dev/null 2>&1
 sudo mv /tmp/terraform /usr/local/bin/ > /dev/null 2>&1
