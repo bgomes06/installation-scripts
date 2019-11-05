@@ -4,8 +4,8 @@ sudo amazon-linux-extras install docker -y
 
 sleep 2
 
-sudo service docker start
-sudo service docker enable
+sudo systemctl start docker
+sudo systemctl enable docker
 
 sudo usermod -a -G docker ec2-user
 
@@ -16,4 +16,5 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
-
+docker -v
+docker-compose -v
